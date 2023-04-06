@@ -1,4 +1,5 @@
-@import url("fontawesome-all.min.css");
+@import url("all.css");
+@import url("brands.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /*
@@ -6,6 +7,14 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+:root{
+	--oldColor: #4acaa8;
+	--old_lightColor: #d2f2e9;
+
+	--mainColor: #4078c0;
+	--mainColor_light: #4e81c4;
+	--lightColor: #9eafc6;
+}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -117,7 +126,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #4acaa8 !important;
+			color: var(--mainColor) !important;
 		}
 
 	strong, b {
@@ -1789,7 +1798,7 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		color: #4acaa8;
+		color: var(--mainColor);
 		font-size: 3.5em;
 	}
 
@@ -1852,7 +1861,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #4acaa8;
+			border-color: var(--mainColor);
 		}
 
 	select {
@@ -1957,7 +1966,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #4acaa8;
+			border-color: var(--mainColor);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2406,7 +2415,7 @@ input, select, textarea {
 			}
 
 			ul.feature-icons li:before {
-				background: #4acaa8;
+				background: var(--mainColor);
 				border-radius: 100%;
 				color: #ffffff;
 				display: block;
@@ -2622,7 +2631,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #4acaa8;
+			background-color: var(--mainColor);
 			color: #ffffff !important;
 		}
 
@@ -2704,8 +2713,8 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background: #4acaa8;
-		color: #d2f2e9;
+		background: var(--mainColor);
+		color: var(--lightColor);
 		height: 100%;
 		overflow-y: auto;
 		position: fixed;
@@ -2728,7 +2737,7 @@ input, select, textarea {
 		}
 
 		#header a {
-			color: #d2f2e9;
+			color: var(--lightColor);
 		}
 
 			#header a:hover {
@@ -2755,7 +2764,7 @@ input, select, textarea {
 			}
 
 			#header > header p {
-				color: #d2f2e9;
+				color: var(--lightColor);
 				font-style: italic;
 				margin: 1em 0 0 0;
 			}
@@ -2776,7 +2785,7 @@ input, select, textarea {
 			}
 
 				#header > footer .icons li a {
-					color: #b7eadc;
+					color: var(--lightColor);
 				}
 
 		#header > nav {
@@ -2793,7 +2802,7 @@ input, select, textarea {
 			}
 
 				#header > nav ul li {
-					border-top: solid 2px #5ccfb1;
+					border-top: solid 2px var(--mainColor_light);
 					display: block;
 					padding: 0;
 				}
@@ -2812,7 +2821,7 @@ input, select, textarea {
 
 						#header > nav ul li a.active {
 							background: #fff;
-							color: #4acaa8 !important;
+							color: var(--mainColor) !important;
 						}
 
 					#header > nav ul li:first-child {
@@ -3080,7 +3089,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #4acaa8;
+						background: var(--mainColor);
 						color: #ffffff;
 						content: '\f0c9';
 						display: block;
