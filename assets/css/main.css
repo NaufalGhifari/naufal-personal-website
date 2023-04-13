@@ -264,11 +264,29 @@ input, select, textarea {
 	#portfolio-article{
 		padding: 5%;
 		background-color: lemonchiffon;
-		border-radius: 10px;
+		border-radius: 20px;
+
+		border-top-left-radius: 0px;
 	}
 
 	#small-logo{
 		width: 50%;
+	}
+
+	/* folder style */
+	.folder-1{
+		height: 0.75em;
+		background-color: rgb(254, 192, 76);
+		border-top-right-radius: 10px;
+		width: 95%;
+	}
+
+	.folder-2{
+		height: 1em;
+		background-color: rgb(254, 192, 76);
+		width: 25%;
+		border-top-left-radius:20px;
+		border-top-right-radius: 20px;
 	}
 
 	/*
@@ -2877,7 +2895,7 @@ input, select, textarea {
 						border: 0;
 						color: #ffffff !important;
 						display: block;
-						padding: 0.85em 0;
+						padding: 0.5em 0;
 						text-decoration: none;
 					}
 
