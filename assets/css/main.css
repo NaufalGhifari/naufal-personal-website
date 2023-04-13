@@ -247,6 +247,36 @@ input, select, textarea {
 
 	/* My addition */
 
+	.features article .portfolio-tech-logo{
+		display: inline-block;
+		padding-right: 2.5em;
+		/*vertical-align: middle;*/
+		width: 35%;
+	}
+
+	.features article .portfolio-tech-logo img{
+		width: 100%;
+		margin-top: 10%;
+		margin-bottom: 10%;
+		max-height: 20%;
+	}
+
+	.features article .portfolio-description{
+		display: inline-block;
+		vertical-align: middle;
+		width: 60%;
+	}
+
+	/*
+	.portfolio-description{
+		width: 48%;
+	}
+
+	.portfolio-tech-logo img{
+		display: block;
+		width: 100%;
+	}
+	*/
 	
 
 /* Row */
