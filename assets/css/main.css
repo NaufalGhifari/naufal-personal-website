@@ -247,10 +247,42 @@ input, select, textarea {
 
 	/* My addition. */
 
+	#portfolio-inner{
+		width: 60%;
+	}
+
+	#portfolio-logo{
+		width: 35%;
+		vertical-align:top;
+		text-align: center;
+	}
+
+	.features article #portfolio-logo img{
+		margin-top: 20%;
+	}
+
+	#portfolio-article{
+		padding: 5%;
+		background-color: lemonchiffon;
+		border-radius: 10px;
+	}
+
+	#small-logo{
+		width: 50%;
+	}
+
+	/*
+	.features article .portfolio-tech-logo #tech-img{
+		width: 100%;
+		margin-top: 10%;
+		margin-bottom: 10%;
+		max-height: 20%;
+	}
+
+
 	.features article .portfolio-tech-logo{
 		display: inline-block;
 		padding-right: 2.5em;
-		/*vertical-align: middle;*/
 		width: 35%;
 	}
 
@@ -265,7 +297,7 @@ input, select, textarea {
 		display: inline-block;
 		vertical-align: middle;
 		width: 60%;
-	}
+	}*/
 
 	/*
 	.portfolio-description{
