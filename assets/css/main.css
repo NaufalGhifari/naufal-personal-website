@@ -289,6 +289,26 @@ input, select, textarea {
 		border-top-right-radius: 20px;
 	}
 
+	/**/
+	.animated-gradient-text {
+	background: linear-gradient(to right, #23a6d5, #23d5ab, #48ff00);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animate-gradient 10s ease-in-out infinite;
+	}
+
+	@keyframes animate-gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+	}
+
 	/*
 	.features article .portfolio-tech-logo #tech-img{
 		width: 100%;
