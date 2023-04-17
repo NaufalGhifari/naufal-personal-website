@@ -251,10 +251,21 @@ input, select, textarea {
 		width: 60%;
 	}
 
+	#portfolio-inner img{
+		width: 100%;
+		margin-top: 1em;
+		border-radius: 7.5px;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	}
+
 	#portfolio-logo{
 		width: 35%;
 		vertical-align:top;
 		text-align: center;
+	}
+
+	#portfolio-logo img{
+		margin: 0 auto;
 	}
 
 	.features article #portfolio-logo img{
@@ -265,12 +276,16 @@ input, select, textarea {
 		padding: 5%;
 		background-color: lemonchiffon;
 		border-radius: 20px;
-
 		border-top-left-radius: 0px;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	}
 
 	#small-logo{
 		width: 50%;
+	}
+
+	#medium-logo {
+		width: 75%;
 	}
 
 	/* folder style */
@@ -308,46 +323,7 @@ input, select, textarea {
 		background-position: 0% 50%;
 	}
 	}
-
-	/*
-	.features article .portfolio-tech-logo #tech-img{
-		width: 100%;
-		margin-top: 10%;
-		margin-bottom: 10%;
-		max-height: 20%;
-	}
-
-
-	.features article .portfolio-tech-logo{
-		display: inline-block;
-		padding-right: 2.5em;
-		width: 35%;
-	}
-
-	.features article .portfolio-tech-logo img{
-		width: 100%;
-		margin-top: 10%;
-		margin-bottom: 10%;
-		max-height: 20%;
-	}
-
-	.features article .portfolio-description{
-		display: inline-block;
-		vertical-align: middle;
-		width: 60%;
-	}*/
-
-	/*
-	.portfolio-description{
-		width: 48%;
-	}
-
-	.portfolio-tech-logo img{
-		display: block;
-		width: 100%;
-	}
-	*/
-	
+	/* End of my addition */
 
 /* Row */
 
