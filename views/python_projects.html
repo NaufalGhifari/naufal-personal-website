@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Muhammad Naufal Al Ghifari</title>
+		<link rel="icon" href="../images/naufal_icon.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+
+		<style>
+			pre {
+				background-color: #f4f4f4;
+				padding: 10px;
+				font-family: "Courier New", Courier, monospace;
+			}
+		</style>
+
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="../images/naufal_profile.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Muhammad Naufal<br/>Al Ghifari</a></h1>
+					<!--<p>Doing my very best one day at a time!</p>-->
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="#python_projects" class="active">Python projects</a></li>
+						<li><a href="#markov_model">1. Text generator: Markov model</a></li>
+						<li><a href="#text_blob">2. Sentiment analysis: TextBlob</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">			
+						<li><a href="https://github.com/NaufalGhifari" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/muhammad-naufal-al-ghifari-25a8711b2/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:naufalavalist@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="tel:+6281188844321" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<!-- python projects -->
+						<section id="python_projects">
+							<div class="image main" data-position="center">
+								<img src="../images/code_banner.jpg" alt="codes banner image" />
+							</div>
+							<div class="container">
+								<header class="major">
+									<h2><span class="animated-gradient-text">Python</span> projects</h2>
+								</header>
+								<p>
+									Lorem ipsum dolor sit amet.
+								</p>
+							</div>
+						</section>
+
+						<!-- markov model -->
+						<section id="markov_model">
+							<div class="container">
+								<h3>1. Text Generator: Markov model (1st Order)</h3>
+								<p>
+									This program is able to generate text of a desied length based on an input text. It woks with only 1st Order Markov model. 
+									Input text is split into words, the words are loaded into a transition table. 
+									From there, generate a text that is relatively similar to the initial text input.
+								</p>
+								<pre>
+import random
+
+# take input text from a file
+with open("romeo_and_juliet.txt", encoding="utf8") as f:
+	input = f.read()
+
+# spilt the words
+words = input.split(' ')
+
+# replace EOL with whitespace
+input = input.replace("\n", " ")
+
+# make into a model using py dict
+model = {}
+for i in range(len(words)-1):
+	state1 = words[i] # state 
+	state2 = words[i + 1] # transition
+
+	if state1 not in model:
+		model[state1] = [] # create new key in dict 
+	model[state1].append(state2)
+
+# generate an output
+output = ""
+output_length = 15
+
+# take model.keys(), convert into a list and pick a random value
+s = random.choice(list(model.keys()))
+
+for i in range(output_length):
+	if s not in model: # reached the end of the transition table
+		break
+	s = random.choice(model[s])
+	output = output + " " + s
+
+# print to a text file
+with open("output.txt", "a") as outFile:
+	outFile.write(output + "\n\n#####\n\n")
+
+print(output) 
+								</pre>
+
+
+							</div>
+						</section>
+
+						<!-- sent analysis TextBlob -->
+						<section id="text_blob">
+							<div class="container">
+								<h3>2. Sentiment analysis: TextBlob</h3>
+								<p>
+									This is a very simple and straightforward sentiment analysis bot.
+									It uses TextBlob's sentiment polartity method. It's relatively straightforward;
+									It provides a quick and dirty sentiment analysis without taking into 
+									account the contextor relationship between individual words, hence why 
+									"Super duper sad" would be classified as "neutral".
+									<br>
+									This code is based on Federico Azzurro's tutorial (@Indently on YT) on Udemy with heavy modification from me:</p>
+									<a href="https://www.udemy.com/course/great-python-projects/learn/lecture/38212564#overview">https://www.udemy.com/course/great-python-projects/learn/lecture/38212564#overview</a>
+								</p>
+								<pre>
+from textblob import TextBlob
+from dataclasses import dataclass
+
+@dataclass
+class Mood:
+	"""class used to store the mood and polarity of a message"""
+	emoji: str
+	sentiment: float
+
+def get_mood(input_text: str, *, sensitivity: float) -> Mood:
+	"""
+	input_text: user generated message to analyse
+	sensitivity: a value which needs to be surpassed in order 
+	for the program to return happy treshold
+	"""
+
+	# get the polarity using TextBlob's sentiment.polarity
+	polarity: float = TextBlob(input_text).sentiment.polarity
+	
+	# define treshod of happy to unhappy
+	happy_treshold: float = sensitivity
+	unhappy_treshold: float = sensitivity * -1
+
+	if polarity >= happy_treshold:
+		return Mood("😁", polarity)
+	elif polarity <= unhappy_treshold:
+		return Mood("☹️", polarity)
+	else:
+		return Mood("😐", polarity)
+	
+def run_bot():
+	print("\nGreetings! please enter some text to analyse.")
+	while True:
+		user_input: str = input("\nYou: ")
+		mood: Mood = get_mood(user_input, sensitivity=0.3)
+		print(f"Mood: {mood.emoji}, (polarity: {mood.sentiment})\n")
+	
+if __name__ == "__main__":
+	run_bot() 
+								</pre>
+
+
+							</div>
+						</section>
+						
+
+					</div>				
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
