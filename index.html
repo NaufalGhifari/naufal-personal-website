@@ -78,8 +78,8 @@
 									<article id="portfolio-article">
 										<a class="image" id="portfolio-logo">
 											<img id="small-logo" src="./images/opencv_512px.png" alt="OpenCV logo">
-											<img id="small-logo" src="./images/pytorch-ar21.svg" alt="PyTorch logo">
-											<img id="small-logo" src="https://assets-global.website-files.com/646dd1f1a3703e451ba81ecc/64994922be624dae865d06a5_UltralyticsYOLO_full_blue.svg" alt="Ultralytics logo">
+											<img src="./images/pytorch-ar21.svg" alt="PyTorch logo">
+											<img src="https://assets-global.website-files.com/646dd1f1a3703e451ba81ecc/64994922be624dae865d06a5_UltralyticsYOLO_full_blue.svg" alt="Ultralytics logo">
 										</a>
 											
 										<div class="inner" id="portfolio-inner">
@@ -108,6 +108,44 @@
 										</div>
 									</article>
 
+									<!-- Question answer PDF AI ======================================================================================================================================================== -->
+									<div class="folder-2"></div>
+									<div class="folder-1"></div>
+									<article id="portfolio-article">
+										<a class="image" id="portfolio-logo">
+											<img src="./images/haystack.png" alt="Haystack logo">
+											<img src="./images/streamlit.svg" alt="Streamlit logo">
+										</a>
+											
+										<div class="inner" id="portfolio-inner">
+											<h4>PDF Question-Answer AI Application</h4>
+											<p>
+												<img src="./images/PDF_chat_v1.png" alt="PDF Chatbot Web App"></br></br>
+												An NLP 'chatbot' able to comprehend user query and answer based on information in a given PDF file. 
+												Making good use of Haystack v1.25's ready-to-use ExtractiveQAPipeline to retrieve relevant excerpts and passing it to the reader for further comprehension. The answers are then scored and presented to the user.
+
+												<p>This project does not make use of OpenAI's API nor any other APIs.</p> 
+												
+												
+												<p>How it works:</p>
+												<ol>
+												<li>Extracts corpus (text) data from a PDF</li>
+												<li>Using TextIndexingPipeline, convert corpus into haystack document object and store them in a DocumentStore</li>
+												<li>Initialise BM25Retriever and FARMReader</li>
+												<li>Connect retriever and reader using ExtractiveQAPipeline</li>
+												<li>Run the pipeline and predict the answer to a given query </li>
+												</ol>
+												
+												<ul>
+													Useful links:<br/>
+													<li><a href="https://github.com/NaufalGhifari/Naufals_NLP/tree/main/PDF%20Chat%20Application">Github Repo</a></li>
+												</ul>
+											</p>
+										</div>
+									</article>
+									
+									
+									
 									<!-- Energy and Linear Regression ======================================================================================================================================================== -->
 
 
